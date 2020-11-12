@@ -8,8 +8,8 @@ var Messenger = function(el){
     m.current_length = 0;
     m.fadeBuffer = false;
     m.messages = [
-      'Hamster.',
-      'This is the Lemon talking.',
+      'Agent Hamster.',
+      'This is agent Lemon talking.',
       "Have you been in accident which wasn't your fault?",
       'Just kidding, this website is not a scam. Trust me.',
       'To continue you must download the app, just one the last time.'
@@ -70,7 +70,7 @@ var Messenger = function(el){
     if(do_cycles === true){
       setTimeout(m.animateFadeBuffer, 50);
     } else {
-      setTimeout(m.cycleText, 2000);
+      setTimeout(m.cycleText, 3500);
     }
   };
 
@@ -165,5 +165,11 @@ $(document).ready(function() {
   css.type = "text/css";
   css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
   document.body.appendChild(css);
+
+  $('.submit').click(function() {
+    $('.main-content').fadeOut();
+    $('.spinner').fadeIn().delay(3000).fadeOut();
+    $('.spinner2').delay(5000).fadeIn();
+  });
 });
 
